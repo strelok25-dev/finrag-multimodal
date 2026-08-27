@@ -1,0 +1,32 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.7.4
+    container_name: finrag_qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - ./qdrant_storage:/qdrant/storage
+    restart: unless-stopped
+
+  app:
+    build: .
+    image: finrag_app:latest
+    depends_on:
+      - qdrant
+    environment:
+      QDRANT_HOST: qdrant
+      QDRANT_PORT: "6333"
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY}
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY}
+      LANGFUSE_HOST: ${LANGFUSE_HOST:-https://cloud.langfuse.com}
+    volumes:
+      - ./data:/app/data
+      - hf_cache:/root/.cache
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    profiles: ["run"]
+
+volumes:
+  hf_cache:

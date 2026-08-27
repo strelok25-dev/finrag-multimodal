@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Models and large files
+*.pt
+*.pth
+*.onnx
+*.bin
+models/
+
+# Qdrant storage (это гигабайты данных)
+qdrant_storage/
+
+# Data artifacts (слишком большие для GitHub)
+data/processed/*.json
+data/raw/*.pdf
+
+# Logs and temporary
+*.log
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env

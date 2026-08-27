@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.env
+qdrant_storage/
+data/raw/
+data/processed/
+assets/
+*.md

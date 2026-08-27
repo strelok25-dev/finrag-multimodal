@@ -1,0 +1,32 @@
+[
+    {
+        "id": "q1_positive",
+        "question": "What were the outstandings of home equity loans at December 31, 2023?",
+        "expected_status": "verified",
+        "expected_number": "25.5"
+    },
+    {
+        "id": "q2_positive",
+        "question": "What was the total net income for the year 2023?",
+        "expected_status": "verified",
+        "expected_number": "26,515"
+    },
+    {
+        "id": "q3_negative",
+        "question": "What was Tesla total revenue in 2023?",
+        "expected_status": "not_found",
+        "expected_number": null
+    },
+    {
+        "id": "q4_trick",
+        "question": "What is the total outstandings for commercial real estate in 2025?",
+        "expected_status": "not_found",
+        "expected_number": null
+    },
+    {
+        "id": "q5_positive",
+        "question": "What was the effective tax rate in 2022?",
+        "expected_status": "verified",
+        "expected_number": "11.1"
+    }
+]
